@@ -134,10 +134,10 @@ const pause = ms => new Promise(resolve => setTimeout(resolve,ms));
     await popup.setViewportSize({width:360,height:600});
     await popup.evaluate(()=>document.fonts.ready);
     await popup.locator('body').screenshot({path:path.join(extension,'docs','popup-preview.png'),animations:'disabled'});
+    await popup.locator('#jev-details').evaluate(el=>el.open=true);
     await popup.locator('#api-key').fill('');
     await popup.locator('#endpoint').fill('https://api.typesafe.ai/v1/systemone');
     await popup.locator('#max-calls').fill('6');
-    await popup.locator('#jev-details').evaluate(el=>el.open=true);
     await popup.locator('body').screenshot({path:path.join(extension,'docs','jev-preview.png'),animations:'disabled'});
     assert.deepEqual(errors,[]);
   } finally { await context.close(); server.close();fs.rmSync(profile,{recursive:true,force:true});fs.rmSync(testExtension,{recursive:true,force:true}); }
