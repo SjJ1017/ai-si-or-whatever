@@ -4,7 +4,7 @@ Name: AI, SI, or Whatever
 
 Summary: Choose AI, SI, an alternating preference, or your own name for intelligence terminology on webpages.
 
-Category: Accessibility
+Category: Functionality & UI
 
 Language: English
 
