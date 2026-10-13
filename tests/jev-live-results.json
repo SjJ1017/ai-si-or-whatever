@@ -1,0 +1,128 @@
+{
+  "timestamp": "2026-10-13T12:29:41.509Z",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "requestedModel": "jev-latest",
+  "requestCount": 2,
+  "synthetic": true,
+  "threshold": 0.85,
+  "batches": [
+    {
+      "model": "jev-1.13.0",
+      "latencyMs": 534,
+      "usage": {
+        "input_tokens": 1248,
+        "output_tokens": 112
+      },
+      "results": [
+        {
+          "text": "AI models help people write software.",
+          "token": "AI",
+          "expected": true,
+          "probability": 0.97,
+          "decision": "replace",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "OpenAI released a new language model.",
+          "token": "AI",
+          "expected": true,
+          "probability": 0.93,
+          "decision": "replace",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "An AI-Agent can plan and use tools.",
+          "token": "AI",
+          "expected": true,
+          "probability": 0.97,
+          "decision": "replace",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "Scrivo ai miei amici ogni giorno.",
+          "token": "ai",
+          "expected": false,
+          "language": "it",
+          "probability": 0.03,
+          "decision": "preserve",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "Si quieres, podemos ir mañana.",
+          "token": "Si",
+          "expected": false,
+          "language": "es",
+          "probability": 0.02,
+          "decision": "preserve",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "The SI units include meters and kilograms.",
+          "token": "SI",
+          "expected": false,
+          "probability": 0.03,
+          "decision": "preserve",
+          "correctAtThreshold": true
+        }
+      ]
+    },
+    {
+      "model": "jev-1.13.0",
+      "latencyMs": 501,
+      "usage": {
+        "input_tokens": 1264,
+        "output_tokens": 112
+      },
+      "results": [
+        {
+          "text": "The government calls its AI policy Super Intelligence.",
+          "token": "AI",
+          "expected": true,
+          "probability": 0.79,
+          "decision": "local-rule",
+          "correctAtThreshold": false
+        },
+        {
+          "text": "SI technology is another name for artificial intelligence.",
+          "token": "SI",
+          "expected": true,
+          "probability": 0.88,
+          "decision": "replace",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "This ai-powered assistant uses a neural model.",
+          "token": "ai",
+          "expected": true,
+          "probability": 0.95,
+          "decision": "replace",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "AI means aortic insufficiency in this medical report.",
+          "token": "AI",
+          "expected": false,
+          "probability": 0.03,
+          "decision": "preserve",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "const ai = 5; return ai + 1;",
+          "token": "ai",
+          "expected": false,
+          "probability": 0.03,
+          "decision": "preserve",
+          "correctAtThreshold": true
+        },
+        {
+          "text": "AI here means Adobe Illustrator, a drawing application.",
+          "token": "AI",
+          "expected": false,
+          "probability": 0.06,
+          "decision": "preserve",
+          "correctAtThreshold": true
+        }
+      ]
+    }
+  ]
+}

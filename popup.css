@@ -1,0 +1,54 @@
+@font-face{font-family:"JetBrains Mono";src:url("fonts/JetBrainsMono-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("fonts/JetBrainsMono-Medium.woff2") format("woff2");font-weight:500 700;font-style:normal;font-display:swap}
+:root{color-scheme:light;--paper:#fff;--ink:#111;--muted:#737373;--line:#e5e5e5}
+*{box-sizing:border-box}
+body{width:360px;margin:0;background:var(--paper);color:var(--ink);font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.5;font-variant-ligatures:none}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
+/* Preserve the original logo, including its typeface and colors. */
+.mark{display:block;background:#29263b;color:#f7f5ef;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:26px;line-height:40px;font-weight:750;text-align:center;width:40px;height:40px;border-radius:12px;letter-spacing:-3px;padding-right:3px}
+.mark span{color:#c8baf5}
+.switch{cursor:pointer}
+.switch input{position:absolute;opacity:0}
+.switch>span{display:block;width:36px;height:20px;background:#ccc;border-radius:20px;padding:3px}
+.switch>span:before{content:"";display:block;width:14px;height:14px;border-radius:50%;background:#fff}
+.switch input:checked+span{background:#111}
+.switch input:checked+span:before{transform:translateX(16px)}
+.switch input:focus-visible+span{outline:2px solid #111;outline-offset:3px}
+main{padding:6px 20px 0}
+.choices{margin:0 0 18px;padding:0;border:0;display:flex;flex-direction:column;gap:6px}
+.choices legend{font-size:15px;font-weight:500;margin-bottom:12px;padding:0}
+.choice{display:flex;align-items:center;gap:10px;min-height:44px;border:1px solid var(--line);padding:11px 12px;border-radius:4px;cursor:pointer;position:relative}
+.choice:hover{border-color:#999}
+.choice:has(input:checked){border-color:#111;background:#111;color:#fff}
+.choice:has(input:focus-visible){outline:2px solid #111;outline-offset:2px}
+.choice input{position:absolute;opacity:0}
+.choice small{font-size:9px;color:var(--muted);margin-left:auto}
+.choice:has(input:checked) small{color:#ccc}
+.dot{margin-left:auto;flex-shrink:0;width:11px;height:11px;border:1px solid #aaa;border-radius:50%}
+.choice small+.dot{margin-left:0}
+.choice input:checked~.dot{border:3px solid #fff;background:#111}
+details{border-top:1px solid var(--line);padding:13px 0}
+summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;list-style:none;font-size:11px}
+summary::-webkit-details-marker{display:none}
+summary>span{color:var(--muted)}
+.optional{font-size:9px}
+.field{display:flex;flex-direction:column;gap:6px;margin-top:12px;font-size:10px;color:var(--muted)}
+input[type=text],input[type=password],input[type=url],input[type=number],textarea{font:inherit;color:#111;border:1px solid var(--line);background:#fff;border-radius:3px;width:100%;padding:9px;outline:none}
+input:focus,textarea:focus{border-color:#111}
+.inline{flex-direction:row;align-items:center;justify-content:space-between}
+.inline input{width:75px}
+#custom-row,#interval-row{margin:-4px 0 18px}
+.check{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:10px}
+.check input{accent-color:#111;margin:0}
+.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.notice{display:flex;align-items:flex-start;gap:8px;border:1px solid #111;border-radius:3px;padding:10px;margin-top:12px}
+.notice p{font-size:9px;line-height:1.65;margin:0}
+.warning-icon{width:15px;height:15px;flex-shrink:0;margin-top:1px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.doc-link{display:inline-block;margin-top:13px;color:#111;font-size:10px;text-underline-offset:3px}
+button{width:100%;border:1px solid #111;background:#111;color:#fff;font:inherit;padding:10px;border-radius:4px;cursor:pointer;margin-top:10px}
+button:hover{background:#333}
+button:disabled{opacity:.5;cursor:wait}
+#feedback{font-size:9px;line-height:1.5;margin:8px 0 12px}
+#feedback:empty{display:none}
+footer{display:flex;justify-content:space-between;gap:12px;padding:14px 20px;font-size:9px;color:var(--muted)}
+[hidden]{display:none!important}

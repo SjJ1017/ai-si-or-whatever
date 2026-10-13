@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI, SI, or Whatever</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header>
+    <span class="mark" aria-label="AI, SI, or Whatever">a<span>i</span></span>
+    <label class="switch" title="Enable or pause"><input id="enabled" type="checkbox" aria-label="Enable extension"><span></span></label>
+  </header>
+  <main>
+    <form id="settings-form">
+      <fieldset class="choices"><legend>Preference</legend>
+        <label class="choice"><input type="radio" name="preference" value="AI"><span>AI</span><small>Artificial Intelligence</small><span class="dot"></span></label>
+        <label class="choice"><input type="radio" name="preference" value="SI"><span>SI</span><small>Super Intelligence</small><span class="dot"></span></label>
+        <label class="choice"><input type="radio" name="preference" value="alternate"><span>Prefer not to say</span><span class="dot"></span></label>
+        <label class="choice"><input type="radio" name="preference" value="custom"><span>Custom</span><span class="dot"></span></label>
+      </fieldset>
+      <div id="custom-row" class="field" hidden><label for="custom">Name</label><input id="custom" type="text" maxlength="80" placeholder="Your name for it"></div>
+      <div id="interval-row" class="field inline" hidden><label for="interval">Switch every</label><input id="interval" type="number" min="1" max="3600" value="5"><span>seconds</span></div>
+      <details><summary>Settings <span aria-hidden="true">+</span></summary>
+        <label class="check"><input id="preserve-case" type="checkbox">Preserve case</label>
+        <label class="field">Excluded sites<textarea id="excluded-hosts" rows="2" placeholder="example.com, one per line"></textarea></label>
+      </details>
+      <details id="jev-details"><summary>Jev <span class="optional">optional</span></summary>
+        <label class="check"><input id="jev-enabled" type="checkbox">Enable TypeSafe Jev</label>
+        <div class="notice" role="note"><svg class="warning-icon" viewBox="0 0 24 24" aria-label="Warning" role="img"><path d="M12 3 22 21H2Z"/><path d="M12 9v5"/><circle cx="12" cy="17.5" r=".6"/></svg><p>When enabled, AI / SI snippets and nearby text are sent to this API. They may contain private content. Requests use your key and may incur charges. With Jev off, everything runs locally.</p></div>
+        <label class="field">API key<input id="api-key" type="password" autocomplete="off" placeholder="Your TypeSafe API key"></label>
+        <label class="field">API URL<input id="endpoint" type="url" placeholder="https://api.typesafe.ai/v1/systemone"></label>
+        <div class="two-fields"><label class="field">Model<input id="model" type="text" value="jev-latest"></label><label class="field">Calls per frame<input id="max-calls" type="number" min="1" max="50"></label></div>
+        <label class="field inline">Threshold<input id="threshold" type="number" min="0.5" max="0.99" step="0.01"></label>
+        <a class="doc-link" href="https://docs.typesafe.ai/introduction/quickstart" target="_blank" rel="noreferrer">API docs ↗</a>
+      </details>
+      <button id="save" type="submit">Save</button>
+      <p id="feedback" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+  <footer><span id="page-status">Local</span><span>v0.1.1</span></footer>
+  <script src="engine.js"></script><script src="jev.js"></script><script src="popup.js"></script>
+</body>
+</html>
